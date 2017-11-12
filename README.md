@@ -1,7 +1,7 @@
 # ListFusen
 付箋紙ツールのようなお手軽さとリスト管理を合わせたテキストエディタ  
 　  
-◆『List Fusen』について  
+**◆『List Fusen』について**  
 　  
 　使用時は ListFusen.exe を実行してください。  
 　アイコンにカーソルを置くと説明文が表示されるのでそちらをお読みください。  
@@ -18,7 +18,7 @@
 　https://www.wareko.jp/blog/c-sharp-form-application-save-restore-window-state-position-size  
 　  
 　  
-◆そのうち入るかも知れない機能  
+**◆そのうち入るかも知れない機能**  
 　  
 　・リッチテキストボックスに対応  
 　　（URLのハイパーリンク表示、太字など文字の装飾、細かいUndo/Redoが標準搭載されているので）  
@@ -30,21 +30,7 @@
 　・スクロールバーをデザインに合ったものに変える  
 　  
 　  
-◆サンプルのメモについて  
-　  
-　こちらの「9cubed」さんのYouTube動画を順に視聴しながらメモったものになります。  
-　  
-　【プログラミング講座】第1回 プログラム言語の種類【独り言】  
-　https://www.youtube.com/watch?v=0wvhzkHW97c&list=PLzEbEpZ4njvPYeBohSQ9te-W_L27r77Fg  
-　  
-　C#の基本的なところだけでなく、Windows Form Appricationの各コントロールやツール作例など  
-　丁寧に解説されていてとても貴重な動画だと思います。感謝です！  
-　  
-　9cubed  
-　http://9cubed.info/  
-　  
-　  
-◆使用アイコンについて  
+**◆使用アイコンについて**  
 　  
 　こちらのフリーアイコン素材を使用させて頂いています。  
 　  
