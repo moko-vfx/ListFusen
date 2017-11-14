@@ -26,10 +26,12 @@ namespace MyTool_ListFusen
 		private List<String> listAllText = new List<string>();			// ListBoxの全テキスト名を保持
 		private int lbSelId = 0;										// ListBoxで選択中のIndexを保持
 		public static string lbSelName = "";                            // ListBoxで選択中のアイテムを保持
-		public static bool addDo = false;								// リストの新規追加をするか判定
+		public static bool addDo = false;                               // アイテムの新規追加を実行するか判定
+		public static bool delDo = false;                               // アイテムの削除を実行するか判定
 		public static string expFld = "";                               // 一括出力先を保持
-		public static bool expDo = false;                               // 一括出力先するか判定
-		private bool topMost = false;									// 最前面表示しているかを判定
+		public static bool expDo = false;                               // 一括出力を実行するか判定
+		private bool topMost = false;                                   // 最前面表示しているか判定
+		private int autoSaveTick = 600000;								// 自動保存の間隔
 
 		// Form1のコンストラクタ
 		public Form1()
@@ -122,11 +124,24 @@ namespace MyTool_ListFusen
 			}
 
 			SelTop();		// 先頭のアイテムを選択
-			ShowTextData();	// 選択アイテムの中身をTextBoxに表示
+			ShowTextData(); // 選択アイテムの中身をTextBoxに表示
+
+			//カレット位置を末尾に移動
+			textBox1.SelectionStart = 0;
+			//テキストボックスにフォーカスを移動
+			textBox1.Focus();
+			//カレット位置までスクロール
+			textBox1.ScrollToCaret();
 
 			// ListBoxの選択Indexが変化した時のイベントをここでONにする
 			listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
-        }
+
+			// オートセーブ用のタイマーを開始
+			Timer timer = new Timer();
+			timer.Tick += new EventHandler(doSave);
+			timer.Interval = autoSaveTick; // 実行間隔
+			timer.Enabled = true; // timer.Start()と同じ
+		}
 
 		/*
 		 * クラス：メモの情報を保持する
@@ -212,13 +227,6 @@ namespace MyTool_ListFusen
 			textBox1.Text = fdata.ftext;
 			// lbSelId更新
 			lbSelId = listBox1.SelectedIndex;
-
-			//カレット位置を末尾に移動
-			textBox1.SelectionStart = 0;
-			//テキストボックスにフォーカスを移動
-			textBox1.Focus();
-			//カレット位置までスクロール
-			textBox1.ScrollToCaret();
 		}
 
 		// 関数：ListBox先頭のアイテムを選択
@@ -307,7 +315,7 @@ namespace MyTool_ListFusen
 		}
 
 		// 関数：ListBoxの選択アイテムのリネーム
-		public void ListMoveReName()
+		public void ListReName()
 		{
 			// アイテムを何も選択していない場合はメッセージを表示
 			if (listBox1.SelectedIndex == -1)
@@ -347,7 +355,7 @@ namespace MyTool_ListFusen
 		}
 
 		// 関数：ListBoxの選択アイテムを削除
-		public void ListMoveDelete()
+		public void ListDelete()
 		{
 			// アイテムを何も選択していない場合はメッセージを表示
 			if (listBox1.SelectedIndex == -1)
@@ -366,22 +374,47 @@ namespace MyTool_ListFusen
 			// ListBoxの選択Indexが変化した時のイベントをここでOFFにする
 			listBox1.SelectedIndexChanged -= listBox1_SelectedIndexChanged;
 
-			// ListBoxの選択アイテムを削除
-			listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-
-			// 最後のアイテムを削除した場合はlbSelIdを更新
-			if (lbSelId == listBox1.Items.Count)
-			{
-				listBox1.SetSelected(listBox1.Items.Count - 1, true);
-			}
-			else
-			{
-				listBox1.SetSelected(lbSelId, true);
-			}
-			// liseSelIdを更新
+			// ListBoxの選択アイテムの名前を取得
+			lbSelName = listBox1.SelectedItem.ToString();
+			// ListBoxの選択アイテムのindexを取得
 			lbSelId = listBox1.SelectedIndex;
 
-			ShowTextData();
+			// リネームダイアログを開く
+			FormDelete f = new FormDelete();
+			// オーナーウィンドウの真ん中に表示
+			f.StartPosition = FormStartPosition.CenterParent;
+			// オーナーウィンドウにthisを指定する
+			f.ShowDialog(this);
+			//フォームが必要なくなったところで、Disposeを呼び出す
+			f.Dispose();
+
+			/*
+			 * この間、リネームダイアログでの操作
+			 */
+
+			// 削除ダイアログを表示
+			if (delDo == true)
+			{
+				// 削除判定のdelDo変数をfalseに戻しておく
+				delDo = false;
+
+				// ListBoxの選択アイテムを削除
+				listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+
+				// 最後のアイテムを削除した場合はlbSelIdを更新
+				if (lbSelId == listBox1.Items.Count)
+				{
+					listBox1.SetSelected(listBox1.Items.Count - 1, true);
+				}
+				else
+				{
+					listBox1.SetSelected(lbSelId, true);
+				}
+				// liseSelIdを更新
+				lbSelId = listBox1.SelectedIndex;
+
+				ShowTextData();
+			}
 
 			// ListBoxの選択Indexが変化した時のイベントをここでONにする
 			listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
@@ -425,6 +458,11 @@ namespace MyTool_ListFusen
 				System.Threading.Thread.Sleep(1000);  // 重たい処理のつもり
 			});
 			this.labelSaved.Visible = false;
+		}
+		// 関数：オートセーブ用
+		public void doSave(object sender, EventArgs e)
+		{
+			SaveAll();
 		}
 
 		// 関数：全ての内容を一括出力する
@@ -546,7 +584,12 @@ namespace MyTool_ListFusen
 		// ボタン：ReName
 		private void buttonReName_MouseClick(object sender, MouseEventArgs e)
 		{
-			ListMoveReName();
+			ListReName();
+		}
+		// ListBoxダブルクリックでリネーム
+		private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			ListReName();
 		}
 
 		// ボタン：Del マウスオーバーで画像差し替え
@@ -561,7 +604,7 @@ namespace MyTool_ListFusen
 		// ボタン：Del
 		private void buttonDel_MouseClick(object sender, MouseEventArgs e)
 		{
-			ListMoveDelete();
+			ListDelete();
 		}
 
 		// ボタン：Undo マウスオーバーで画像差し替え
@@ -678,9 +721,22 @@ namespace MyTool_ListFusen
 		// ListBoxのショートカットキー設定
 		private void listBox1_KeyDown(object sender, KeyEventArgs e)
 		{
+			// 保存
 			if (e.Control && e.KeyCode == Keys.S)
 			{
 				SaveAll();
+				e.SuppressKeyPress = true;
+			}
+			// リストアイテムのリネーム
+			if (e.KeyData == Keys.F2)
+			{
+				ListReName();
+				e.SuppressKeyPress = true;
+			}
+			// リストアイテムの削除
+			if (e.KeyData == Keys.Delete)
+			{
+				ListDelete();
 				e.SuppressKeyPress = true;
 			}
 		}
@@ -697,6 +753,12 @@ namespace MyTool_ListFusen
 			if (e.Control && e.KeyCode == Keys.A)
 			{
 				textBox1.SelectAll();
+				e.SuppressKeyPress = true;
+			}
+			// リストアイテムのリネーム
+			if (e.KeyData == Keys.F2)
+			{
+				ListReName();
 				e.SuppressKeyPress = true;
 			}
 		}
@@ -741,39 +803,6 @@ namespace MyTool_ListFusen
 			}
 		}
 
-		/*
-		// ListBoxの背景色を変える
-		private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
-		{
-			if (e.Index < 0) return; //無駄な描画をさせないよう抜ける
-
-			if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-			{
-				e = new DrawItemEventArgs(e.Graphics,
-				e.Font,
-				e.Bounds,
-				e.Index,
-				e.State ^ DrawItemState.Selected,
-				e.ForeColor,
-				Color.Goldenrod); // 最後の引数が背景色
-			}
-			e.DrawBackground();
-			e.Graphics.DrawString(listBox1.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
-			e.DrawFocusRectangle();
-		}
-		*/
-
-
-		// 残っている実装：
-		//
-		// ・ListBoxとListBox選択時の背景色を水色ではなく任意の色にしたい（優先度：高）
-		//
-		// ・スクロールバーの色や幅を変えたい（優先度：低）
-		// ・ツールの位置とサイズをできればroamingの所ではなくテキストデータで保持する（優先度：低）
-		// ・文字サイズやカラーリングを変えるオプションを付ける（優先度：低）
-		// ・TextBoxのカーソル位置を記憶させる（付箋クラスに変数を増設でいけそう）
-		//
-		// ・変更があったら終了時にダイアログボックスを表示する（優先度：低）
-		// 　※TextChangeイベントでBlool変数をTrueにして1つでもtrueがあれば表示させるのでいけそう？
+		
 	}
 }

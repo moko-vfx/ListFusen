@@ -18,12 +18,20 @@
 　https://www.wareko.jp/blog/c-sharp-form-application-save-restore-window-state-position-size  
 　  
 　  
+**◆更新履歴**  
+　  
+　2017.11.15 v.1.01  
+　　リストアイテムのリネームダイアログをF2キーまたはListBoxダブルクリックで表示  
+　　リストアイテム削除時の確認ダイアログ表示（ショートカットキーはDelete）  
+　　オートセーブ対応（暫定で10分固定 / オートセーブ無効化は現時点ではできません）  
+　  
+　  
 **◆そのうち入るかも知れない機能**  
 　  
+　・文字サイズやカラーリングを変えるオプションを付ける  
 　・リッチテキストボックスに対応  
 　　（URLのハイパーリンク表示、太字など文字の装飾、細かいUndo/Redoが標準搭載されているので）  
 　・ツールの位置とサイズをできればAppricationの所ではなくテキストデータで保持する  
-　・文字サイズやカラーリングを変えるオプションを付ける  
 　・TextBoxのカーソル位置を記憶させる  
 　・変更があったら終了時にダイアログボックスを表示する  
 　・ListBoxとListBox選択時の背景色を水色ではなくデザインに合った色にする  
@@ -37,3 +45,4 @@
 　Free Icon Pack: 375 Retina-Display-Ready Icons  
 　https://www.webpagefx.com/blog/web-design/375-retina-display-ready-icons/  
 　  
+moko
