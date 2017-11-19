@@ -461,7 +461,8 @@
 			this.textBox1.Location = new System.Drawing.Point(14, 9);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(474, 400);
+			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.textBox1.Size = new System.Drawing.Size(472, 400);
 			this.textBox1.TabIndex = 0;
 			this.textBox1.WordWrap = false;
 			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
