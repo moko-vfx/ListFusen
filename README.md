@@ -18,6 +18,9 @@
 　こちらを参考にしました。  
 　https://www.wareko.jp/blog/c-sharp-form-application-save-restore-window-state-position-size  
 　  
+　不具合報告は下記までお願いします。  
+　https://twitter.com/moko_03_25  
+　  
 　  
 **◆更新履歴**  
 　  

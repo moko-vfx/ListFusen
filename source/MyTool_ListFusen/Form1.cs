@@ -53,6 +53,19 @@ namespace MyTool_ListFusen
 			if (Properties.Settings.Default.FormSize.Width == 0 || Properties.Settings.Default.FormSize.Height == 0)
 			{
 				// 初回起動時にはデザイナーウインドウで指定されている大きさになる
+
+				//既定値に戻す
+				Properties.Settings.Default.Reset();
+				// フォント周りの変数の初期化
+				fstyLB = listBox1.Font;
+				fcolLB = listBox1.ForeColor;
+				fstyTB = textBox1.Font;
+				fcolTB = textBox1.ForeColor;
+				// オートセーブ周りの設定を前回終了時の設定に復元
+				autoSaveDo = Properties.Settings.Default.autoSave;
+				deactiveSaveDo = Properties.Settings.Default.deactiveSave;
+				autoSaveTickId = Properties.Settings.Default.autoSaveTId;
+				autoSaveTick = Properties.Settings.Default.autoSaveT;
 			}
 			else
 			{
@@ -81,7 +94,18 @@ namespace MyTool_ListFusen
 				autoSaveTick = Properties.Settings.Default.autoSaveT;
 				if (autoSaveTick == 0)
 				{
-					autoSaveTick = 36000000;
+					//既定値に戻す
+					Properties.Settings.Default.Reset();
+					// フォント周りの変数の初期化
+					fstyLB = listBox1.Font;
+					fcolLB = listBox1.ForeColor;
+					fstyTB = textBox1.Font;
+					fcolTB = textBox1.ForeColor;
+					// オートセーブ周りの設定を前回終了時の設定に復元
+					autoSaveDo = Properties.Settings.Default.autoSave;
+					deactiveSaveDo = Properties.Settings.Default.deactiveSave;
+					autoSaveTickId = Properties.Settings.Default.autoSaveTId;
+					autoSaveTick = Properties.Settings.Default.autoSaveT;
 				}
 			}
 
