@@ -8,5 +8,32 @@
     <Setting Name="FormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
+    <Setting Name="textBoxFStyle" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">メイリオ, 9.75pt</Value>
+    </Setting>
+    <Setting Name="textBoxFColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">204, 206, 208</Value>
+    </Setting>
+    <Setting Name="listBoxFStyle" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">メイリオ, 10pt</Value>
+    </Setting>
+    <Setting Name="listBoxFColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">204, 206, 208</Value>
+    </Setting>
+    <Setting Name="splitDist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">182</Value>
+    </Setting>
+    <Setting Name="autoSave" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="deactiveSave" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="autoSaveT" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">36000000</Value>
+    </Setting>
+    <Setting Name="autoSaveTId" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

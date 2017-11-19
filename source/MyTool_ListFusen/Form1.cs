@@ -31,7 +31,15 @@ namespace MyTool_ListFusen
 		public static string expFld = "";                               // 一括出力先を保持
 		public static bool expDo = false;                               // 一括出力を実行するか判定
 		private bool topMost = false;                                   // 最前面表示しているか判定
-		private int autoSaveTick = 600000;								// 自動保存の間隔
+		public static Font fstyLB;										// ListBoxのフォントの設定
+		public static Font fstyTB;										// ListBoxのフォントの設定
+		public static Color fcolLB;										// TextBoxのフォントカラー
+		public static Color fcolTB;                                     // TextBoxのフォントカラー
+		private Timer timer;											// オートセーブ用のタイマーの定義
+		public static bool autoSaveDo;									// オートセーブするか判定
+		public static bool deactiveSaveDo;                              // 非アクティブ時セーブするか判定
+		public static int autoSaveTickId;                               // 自動保存の間隔の設定ID
+		public static int autoSaveTick;									// 自動保存の間隔
 
 		// Form1のコンストラクタ
 		public Form1()
@@ -48,8 +56,33 @@ namespace MyTool_ListFusen
 			}
 			else
 			{
+				// 前回終了時のウインドウ位置とサイズに復元
 				this.Location = Properties.Settings.Default.FormLocation;
 				this.Size = Properties.Settings.Default.FormSize;
+
+				// ListBoxとTextBoxのフォント設定を前回終了時の設定に復元
+				this.listBox1.Font = Properties.Settings.Default.listBoxFStyle;
+				this.listBox1.ForeColor = Properties.Settings.Default.listBoxFColor;
+				this.textBox1.Font = Properties.Settings.Default.textBoxFStyle;
+				this.textBox1.ForeColor = Properties.Settings.Default.textBoxFColor;
+				// フォント周りの変数の初期化
+				fstyLB = listBox1.Font;
+				fcolLB = listBox1.ForeColor;
+				fstyTB = textBox1.Font;
+				fcolTB = textBox1.ForeColor;
+
+				// SplitContainerの分割する距離を前回終了時の設定に復元
+				this.splitContainer1.SplitterDistance = Properties.Settings.Default.splitDist;
+
+				// オートセーブ周りの設定を前回終了時の設定に復元
+				autoSaveDo = Properties.Settings.Default.autoSave;
+				deactiveSaveDo = Properties.Settings.Default.deactiveSave;
+				autoSaveTickId = Properties.Settings.Default.autoSaveTId;
+				autoSaveTick = Properties.Settings.Default.autoSaveT;
+				if (autoSaveTick == 0)
+				{
+					autoSaveTick = 36000000;
+				}
 			}
 
 			// テキストファイルの保存フォルダがある場合
@@ -137,7 +170,7 @@ namespace MyTool_ListFusen
 			listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
 
 			// オートセーブ用のタイマーを開始
-			Timer timer = new Timer();
+			timer = new Timer();
 			timer.Tick += new EventHandler(doSave);
 			timer.Interval = autoSaveTick; // 実行間隔
 			timer.Enabled = true; // timer.Start()と同じ
@@ -164,7 +197,7 @@ namespace MyTool_ListFusen
 			}
 		}
 
-		// ListBoxのアイテムを新規追加
+		// 関数：ListBoxのアイテムを新規追加
 		private void ListAdd()
 		{
 			// ListBoxのアイテム数を調べる( = 新規追加するindex)
@@ -455,7 +488,7 @@ namespace MyTool_ListFusen
 		{
 			this.labelSaved.Visible = true;
 			await Task.Run(() => {
-				System.Threading.Thread.Sleep(1000);  // 重たい処理のつもり
+				System.Threading.Thread.Sleep(1000);
 			});
 			this.labelSaved.Visible = false;
 		}
@@ -586,7 +619,7 @@ namespace MyTool_ListFusen
 		{
 			ListReName();
 		}
-		// ListBoxダブルクリックでリネーム
+		// イベント：ListBoxダブルクリックでリネーム
 		private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			ListReName();
@@ -655,6 +688,49 @@ namespace MyTool_ListFusen
 			}
 		}
 
+		// ボタン：Settings マウスオーバーで画像差し替え
+		private void buttonSettings_MouseEnter(object sender, EventArgs e)
+		{
+			buttonSettings.BackgroundImage = Properties.Resources.on_settings;
+		}
+		private void buttonSettings_MouseLeave(object sender, EventArgs e)
+		{
+			buttonSettings.BackgroundImage = Properties.Resources.settings;
+		}
+		// ボタン：Settings
+		private void buttonSettings_MouseClick(object sender, MouseEventArgs e)
+		{
+			// ツール設定ダイアログを開く
+			FormSettings f = new FormSettings();
+			// オーナーウィンドウの真ん中に表示
+			f.StartPosition = FormStartPosition.CenterParent;
+			// オーナーウィンドウにthisを指定する
+			f.ShowDialog(this);
+			//フォームが必要なくなったところで、Disposeを呼び出す
+			f.Dispose();
+
+			/*
+			 * この間、ツール設定ダイアログでの操作
+			 */
+			
+			// フォントの設定を更新
+			listBox1.Font = fstyLB;
+			listBox1.ForeColor = fcolLB;
+			textBox1.Font = fstyTB;
+			textBox1.ForeColor = fcolTB;
+
+			// オートセーブの設定を更新
+			if (autoSaveDo == true)
+			{
+				timer.Interval = autoSaveTick; // 実行間隔
+				timer.Enabled = true; // timer.Start()と同じ
+			}
+			else
+			{
+				timer.Enabled = false; // timer.Stop()と同じ
+			}
+		}
+
 		// ボタン：Export マウスオーバーで画像差し替え
 		private void buttonExport_MouseEnter(object sender, EventArgs e)
 		{
@@ -684,7 +760,16 @@ namespace MyTool_ListFusen
 		{
 			SaveAll();
 		}
-		
+		// イベント：Form非アクティブ時にSave
+		private void Form1_Deactivate(object sender, EventArgs e)
+		{
+			// 非アクティブ時にセーブするオプション設定がONの場合のみ実行
+			if (deactiveSaveDo == true)
+			{
+				SaveAll();
+			}
+		}
+
 		// ボタン：最前面表示 ON / OFF のトグル
 		private void buttonFront_MouseClick(object sender, MouseEventArgs e)
 		{
@@ -707,12 +792,24 @@ namespace MyTool_ListFusen
 		{
 			this.Close();
 		}
-		// 終了時にウインドウ位置とサイズを記憶して次回反映させる
+		// 終了時にウインドウ位置とサイズ・各種設定を記憶して次回反映させる
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			// ウインドウステートがNormal前提で、位置（location）とサイズ（size）を記憶する。
 			Properties.Settings.Default.FormLocation = this.Location;
 			Properties.Settings.Default.FormSize = this.Size;
+			// フォントの設定を記憶する
+			Properties.Settings.Default.listBoxFStyle = this.listBox1.Font;
+			Properties.Settings.Default.listBoxFColor = this.listBox1.ForeColor;
+			Properties.Settings.Default.textBoxFStyle = this.textBox1.Font;
+			Properties.Settings.Default.textBoxFColor = this.textBox1.ForeColor;
+			// 分割の距離を保存する
+			Properties.Settings.Default.splitDist = this.splitContainer1.SplitterDistance;
+			// オートセーブ関連の設定を保存する
+			Properties.Settings.Default.autoSave = autoSaveDo;
+			Properties.Settings.Default.deactiveSave = deactiveSaveDo;
+			Properties.Settings.Default.autoSaveTId = autoSaveTickId;
+			Properties.Settings.Default.autoSaveT = autoSaveTick;
 
 			// ここで設定を保存する
 			Properties.Settings.Default.Save();
@@ -802,7 +899,5 @@ namespace MyTool_ListFusen
 				this.Top += e.Y - mouseY;   // フォームのY座標を更新
 			}
 		}
-
-		
 	}
 }

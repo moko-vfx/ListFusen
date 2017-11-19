@@ -69,6 +69,12 @@
     <Compile Include="FormReName.Designer.cs">
       <DependentUpon>FormReName.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReName.resx">
       <DependentUpon>FormReName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,22 +116,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow 5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arrow 6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\doc 6.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\dustbin.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\browser.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\floppy disk.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow 26.png" />
@@ -137,13 +134,7 @@
     <None Include="Resources\arrow 20.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\plus 1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\plus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\crown.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1_save.png" />
@@ -186,6 +177,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\on_download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on_font.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings 11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

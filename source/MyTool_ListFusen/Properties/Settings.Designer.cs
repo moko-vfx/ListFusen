@@ -46,5 +46,113 @@ namespace MyTool_ListFusen.Properties {
                 this["FormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("メイリオ, 9.75pt")]
+        public global::System.Drawing.Font textBoxFStyle {
+            get {
+                return ((global::System.Drawing.Font)(this["textBoxFStyle"]));
+            }
+            set {
+                this["textBoxFStyle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("204, 206, 208")]
+        public global::System.Drawing.Color textBoxFColor {
+            get {
+                return ((global::System.Drawing.Color)(this["textBoxFColor"]));
+            }
+            set {
+                this["textBoxFColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("メイリオ, 10pt")]
+        public global::System.Drawing.Font listBoxFStyle {
+            get {
+                return ((global::System.Drawing.Font)(this["listBoxFStyle"]));
+            }
+            set {
+                this["listBoxFStyle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("204, 206, 208")]
+        public global::System.Drawing.Color listBoxFColor {
+            get {
+                return ((global::System.Drawing.Color)(this["listBoxFColor"]));
+            }
+            set {
+                this["listBoxFColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("182")]
+        public int splitDist {
+            get {
+                return ((int)(this["splitDist"]));
+            }
+            set {
+                this["splitDist"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoSave {
+            get {
+                return ((bool)(this["autoSave"]));
+            }
+            set {
+                this["autoSave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool deactiveSave {
+            get {
+                return ((bool)(this["deactiveSave"]));
+            }
+            set {
+                this["deactiveSave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("36000000")]
+        public int autoSaveT {
+            get {
+                return ((int)(this["autoSaveT"]));
+            }
+            set {
+                this["autoSaveT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int autoSaveTId {
+            get {
+                return ((int)(this["autoSaveTId"]));
+            }
+            set {
+                this["autoSaveTId"] = value;
+            }
+        }
     }
 }

@@ -47,12 +47,24 @@ namespace MyTool_ListFusen
 			this.Close();
 		}
 
-		// エスケープキーでダイアログを閉じる
+		// テキストボックス内のショートカットキー
 		private void textBoxReName_KeyDown(object sender, KeyEventArgs e)
 		{
+			// エンターキーで決定
+			if (e.KeyCode == Keys.Enter)
+			{
+				// リネーム用TextBoxの文字列を代入
+				Form1.lbSelName = this.textBoxReName.Text;
+				// Form1への受渡し用（リネームする）
+				Form1.addDo = true;
+				// FormReNameを閉じる
+				this.Close();
+			}
+
+			// エスケープキーでダイアログを閉じる
 			if (e.KeyCode == Keys.Escape)
 			{
-				// Form1への受渡し用（出力する）
+				// Form1への受渡し用（リネームしない）
 				Form1.addDo = false;
 				this.Close();
 			}

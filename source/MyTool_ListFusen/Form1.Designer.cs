@@ -29,23 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.panelButton = new System.Windows.Forms.Panel();
 			this.panelLine = new System.Windows.Forms.Panel();
-			this.panelLabel2 = new System.Windows.Forms.Panel();
-			this.panelUP = new System.Windows.Forms.Panel();
-			this.panelLabel1 = new System.Windows.Forms.Panel();
-			this.labelEsc = new System.Windows.Forms.Label();
-			this.labelSaved = new System.Windows.Forms.Label();
-			this.labelTitle = new System.Windows.Forms.Label();
-			this.panelLeft = new System.Windows.Forms.Panel();
-			this.panelLabel3 = new System.Windows.Forms.Panel();
-			this.panelRight = new System.Windows.Forms.Panel();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.buttonFront = new System.Windows.Forms.Button();
 			this.buttonSave = new System.Windows.Forms.Button();
+			this.buttonSettings = new System.Windows.Forms.Button();
 			this.buttonRedo = new System.Windows.Forms.Button();
 			this.buttonUndo = new System.Windows.Forms.Button();
 			this.buttonExport = new System.Windows.Forms.Button();
@@ -54,33 +42,28 @@
 			this.buttonAdd = new System.Windows.Forms.Button();
 			this.buttonDown = new System.Windows.Forms.Button();
 			this.buttonUp = new System.Windows.Forms.Button();
+			this.panelLabel2 = new System.Windows.Forms.Panel();
+			this.panelUP = new System.Windows.Forms.Panel();
+			this.panelLabel1 = new System.Windows.Forms.Panel();
+			this.labelEsc = new System.Windows.Forms.Label();
+			this.labelSaved = new System.Windows.Forms.Label();
+			this.labelTitle = new System.Windows.Forms.Label();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.panelLeft = new System.Windows.Forms.Panel();
+			this.panelLabel3 = new System.Windows.Forms.Panel();
+			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.panelRight = new System.Windows.Forms.Panel();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.panelButton.SuspendLayout();
 			this.panelUP.SuspendLayout();
-			this.panelLeft.SuspendLayout();
-			this.panelRight.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.panelLeft.SuspendLayout();
+			this.panelRight.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// listBox1
-			// 
-			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
-			this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.listBox1.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(206)))), ((int)(((byte)(208)))));
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.ItemHeight = 20;
-			this.listBox1.Location = new System.Drawing.Point(17, 9);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(162, 400);
-			this.listBox1.TabIndex = 1;
-			this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
-			this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
 			// 
 			// panelButton
 			// 
@@ -88,6 +71,7 @@
 			this.panelButton.Controls.Add(this.panelLine);
 			this.panelButton.Controls.Add(this.buttonFront);
 			this.panelButton.Controls.Add(this.buttonSave);
+			this.panelButton.Controls.Add(this.buttonSettings);
 			this.panelButton.Controls.Add(this.buttonRedo);
 			this.panelButton.Controls.Add(this.buttonUndo);
 			this.panelButton.Controls.Add(this.buttonExport);
@@ -113,142 +97,6 @@
 			this.panelLine.Name = "panelLine";
 			this.panelLine.Size = new System.Drawing.Size(4, 26);
 			this.panelLine.TabIndex = 3;
-			// 
-			// panelLabel2
-			// 
-			this.panelLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(130)))), ((int)(((byte)(45)))));
-			this.panelLabel2.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panelLabel2.Location = new System.Drawing.Point(0, 17);
-			this.panelLabel2.Name = "panelLabel2";
-			this.panelLabel2.Size = new System.Drawing.Size(5, 41);
-			this.panelLabel2.TabIndex = 0;
-			// 
-			// panelUP
-			// 
-			this.panelUP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(35)))));
-			this.panelUP.Controls.Add(this.panelLabel1);
-			this.panelUP.Controls.Add(this.labelEsc);
-			this.panelUP.Controls.Add(this.labelSaved);
-			this.panelUP.Controls.Add(this.labelTitle);
-			this.panelUP.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelUP.Location = new System.Drawing.Point(0, 0);
-			this.panelUP.Name = "panelUP";
-			this.panelUP.Size = new System.Drawing.Size(684, 17);
-			this.panelUP.TabIndex = 0;
-			this.panelUP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUP_MouseDown);
-			this.panelUP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUP_MouseMove);
-			// 
-			// panelLabel1
-			// 
-			this.panelLabel1.BackColor = System.Drawing.Color.Goldenrod;
-			this.panelLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panelLabel1.Location = new System.Drawing.Point(0, 0);
-			this.panelLabel1.Name = "panelLabel1";
-			this.panelLabel1.Size = new System.Drawing.Size(5, 17);
-			this.panelLabel1.TabIndex = 0;
-			// 
-			// labelEsc
-			// 
-			this.labelEsc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelEsc.AutoSize = true;
-			this.labelEsc.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.labelEsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(128)))), ((int)(((byte)(119)))));
-			this.labelEsc.Location = new System.Drawing.Point(666, 0);
-			this.labelEsc.Name = "labelEsc";
-			this.labelEsc.Size = new System.Drawing.Size(16, 18);
-			this.labelEsc.TabIndex = 3;
-			this.labelEsc.Text = "x";
-			this.labelEsc.Click += new System.EventHandler(this.labelEsc_Click);
-			// 
-			// labelSaved
-			// 
-			this.labelSaved.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelSaved.AutoSize = true;
-			this.labelSaved.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(210)))), ((int)(((byte)(30)))));
-			this.labelSaved.Font = new System.Drawing.Font("メイリオ", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.labelSaved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(8)))), ((int)(((byte)(9)))));
-			this.labelSaved.Location = new System.Drawing.Point(574, 1);
-			this.labelSaved.Name = "labelSaved";
-			this.labelSaved.Size = new System.Drawing.Size(62, 15);
-			this.labelSaved.TabIndex = 2;
-			this.labelSaved.Text = " S A V E D !";
-			this.labelSaved.Visible = false;
-			// 
-			// labelTitle
-			// 
-			this.labelTitle.AutoSize = true;
-			this.labelTitle.Font = new System.Drawing.Font("メイリオ", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(159)))));
-			this.labelTitle.Location = new System.Drawing.Point(11, 1);
-			this.labelTitle.Name = "labelTitle";
-			this.labelTitle.Size = new System.Drawing.Size(125, 15);
-			this.labelTitle.TabIndex = 1;
-			this.labelTitle.Text = "L I S T  F U S E N　v1.01";
-			// 
-			// panelLeft
-			// 
-			this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
-			this.panelLeft.Controls.Add(this.panelLabel3);
-			this.panelLeft.Controls.Add(this.listBox1);
-			this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelLeft.Location = new System.Drawing.Point(0, 0);
-			this.panelLeft.Name = "panelLeft";
-			this.panelLeft.Size = new System.Drawing.Size(182, 418);
-			this.panelLeft.TabIndex = 3;
-			// 
-			// panelLabel3
-			// 
-			this.panelLabel3.BackColor = System.Drawing.Color.Goldenrod;
-			this.panelLabel3.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panelLabel3.Location = new System.Drawing.Point(0, 0);
-			this.panelLabel3.Name = "panelLabel3";
-			this.panelLabel3.Size = new System.Drawing.Size(5, 418);
-			this.panelLabel3.TabIndex = 0;
-			// 
-			// panelRight
-			// 
-			this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
-			this.panelRight.Controls.Add(this.textBox1);
-			this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelRight.Location = new System.Drawing.Point(0, 0);
-			this.panelRight.Name = "panelRight";
-			this.panelRight.Size = new System.Drawing.Size(498, 418);
-			this.panelRight.TabIndex = 0;
-			// 
-			// textBox1
-			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox1.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(206)))), ((int)(((byte)(208)))));
-			this.textBox1.Location = new System.Drawing.Point(14, 9);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(474, 400);
-			this.textBox1.TabIndex = 0;
-			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-			// 
-			// splitContainer1
-			// 
-			this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
-			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point(0, 58);
-			this.splitContainer1.Name = "splitContainer1";
-			// 
-			// splitContainer1.Panel1
-			// 
-			this.splitContainer1.Panel1.Controls.Add(this.panelLeft);
-			// 
-			// splitContainer1.Panel2
-			// 
-			this.splitContainer1.Panel2.Controls.Add(this.panelRight);
-			this.splitContainer1.Size = new System.Drawing.Size(684, 418);
-			this.splitContainer1.SplitterDistance = 182;
-			this.splitContainer1.TabIndex = 4;
 			// 
 			// buttonFront
 			// 
@@ -277,7 +125,7 @@
 			this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonSave.Location = new System.Drawing.Point(588, 18);
+			this.buttonSave.Location = new System.Drawing.Point(586, 18);
 			this.buttonSave.Name = "buttonSave";
 			this.buttonSave.Size = new System.Drawing.Size(33, 37);
 			this.buttonSave.TabIndex = 2;
@@ -287,6 +135,25 @@
 			this.buttonSave.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonSave_MouseClick);
 			this.buttonSave.MouseEnter += new System.EventHandler(this.buttonSave_MouseEnter);
 			this.buttonSave.MouseLeave += new System.EventHandler(this.buttonSave_MouseLeave);
+			// 
+			// buttonSettings
+			// 
+			this.buttonSettings.BackgroundImage = global::MyTool_ListFusen.Properties.Resources.settings;
+			this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.buttonSettings.FlatAppearance.BorderSize = 0;
+			this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonSettings.Location = new System.Drawing.Point(323, 19);
+			this.buttonSettings.Name = "buttonSettings";
+			this.buttonSettings.Size = new System.Drawing.Size(37, 37);
+			this.buttonSettings.TabIndex = 2;
+			this.buttonSettings.TabStop = false;
+			this.toolTip1.SetToolTip(this.buttonSettings, "ツールの設定ダイアログを開きます");
+			this.buttonSettings.UseVisualStyleBackColor = true;
+			this.buttonSettings.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonSettings_MouseClick);
+			this.buttonSettings.MouseEnter += new System.EventHandler(this.buttonSettings_MouseEnter);
+			this.buttonSettings.MouseLeave += new System.EventHandler(this.buttonSettings_MouseLeave);
 			// 
 			// buttonRedo
 			// 
@@ -334,7 +201,7 @@
 			this.buttonExport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonExport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonExport.Location = new System.Drawing.Point(322, 19);
+			this.buttonExport.Location = new System.Drawing.Point(368, 19);
 			this.buttonExport.Name = "buttonExport";
 			this.buttonExport.Size = new System.Drawing.Size(33, 37);
 			this.buttonExport.TabIndex = 2;
@@ -440,6 +307,165 @@
 			this.buttonUp.MouseEnter += new System.EventHandler(this.buttonUp_MouseEnter);
 			this.buttonUp.MouseLeave += new System.EventHandler(this.buttonUp_MouseLeave);
 			// 
+			// panelLabel2
+			// 
+			this.panelLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(130)))), ((int)(((byte)(45)))));
+			this.panelLabel2.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panelLabel2.Location = new System.Drawing.Point(0, 17);
+			this.panelLabel2.Name = "panelLabel2";
+			this.panelLabel2.Size = new System.Drawing.Size(5, 41);
+			this.panelLabel2.TabIndex = 0;
+			// 
+			// panelUP
+			// 
+			this.panelUP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(35)))));
+			this.panelUP.Controls.Add(this.panelLabel1);
+			this.panelUP.Controls.Add(this.labelEsc);
+			this.panelUP.Controls.Add(this.labelSaved);
+			this.panelUP.Controls.Add(this.labelTitle);
+			this.panelUP.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelUP.Location = new System.Drawing.Point(0, 0);
+			this.panelUP.Name = "panelUP";
+			this.panelUP.Size = new System.Drawing.Size(684, 17);
+			this.panelUP.TabIndex = 0;
+			this.panelUP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUP_MouseDown);
+			this.panelUP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUP_MouseMove);
+			// 
+			// panelLabel1
+			// 
+			this.panelLabel1.BackColor = System.Drawing.Color.Goldenrod;
+			this.panelLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panelLabel1.Location = new System.Drawing.Point(0, 0);
+			this.panelLabel1.Name = "panelLabel1";
+			this.panelLabel1.Size = new System.Drawing.Size(5, 17);
+			this.panelLabel1.TabIndex = 0;
+			// 
+			// labelEsc
+			// 
+			this.labelEsc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.labelEsc.AutoSize = true;
+			this.labelEsc.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.labelEsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(128)))), ((int)(((byte)(119)))));
+			this.labelEsc.Location = new System.Drawing.Point(666, 0);
+			this.labelEsc.Name = "labelEsc";
+			this.labelEsc.Size = new System.Drawing.Size(16, 18);
+			this.labelEsc.TabIndex = 3;
+			this.labelEsc.Text = "x";
+			this.labelEsc.Click += new System.EventHandler(this.labelEsc_Click);
+			// 
+			// labelSaved
+			// 
+			this.labelSaved.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.labelSaved.AutoSize = true;
+			this.labelSaved.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(210)))), ((int)(((byte)(30)))));
+			this.labelSaved.Font = new System.Drawing.Font("メイリオ", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.labelSaved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(8)))), ((int)(((byte)(9)))));
+			this.labelSaved.Location = new System.Drawing.Point(574, 1);
+			this.labelSaved.Name = "labelSaved";
+			this.labelSaved.Size = new System.Drawing.Size(62, 15);
+			this.labelSaved.TabIndex = 2;
+			this.labelSaved.Text = " S A V E D !";
+			this.labelSaved.Visible = false;
+			// 
+			// labelTitle
+			// 
+			this.labelTitle.AutoSize = true;
+			this.labelTitle.Font = new System.Drawing.Font("メイリオ", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(159)))));
+			this.labelTitle.Location = new System.Drawing.Point(11, 1);
+			this.labelTitle.Name = "labelTitle";
+			this.labelTitle.Size = new System.Drawing.Size(125, 15);
+			this.labelTitle.TabIndex = 1;
+			this.labelTitle.Text = "L I S T  F U S E N　v1.02";
+			// 
+			// splitContainer1
+			// 
+			this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
+			this.splitContainer1.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::MyTool_ListFusen.Properties.Settings.Default, "splitDist", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.splitContainer1.Location = new System.Drawing.Point(0, 58);
+			this.splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Controls.Add(this.panelLeft);
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.panelRight);
+			this.splitContainer1.Size = new System.Drawing.Size(684, 418);
+			this.splitContainer1.SplitterDistance = global::MyTool_ListFusen.Properties.Settings.Default.splitDist;
+			this.splitContainer1.TabIndex = 4;
+			// 
+			// panelLeft
+			// 
+			this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
+			this.panelLeft.Controls.Add(this.panelLabel3);
+			this.panelLeft.Controls.Add(this.listBox1);
+			this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelLeft.Location = new System.Drawing.Point(0, 0);
+			this.panelLeft.Name = "panelLeft";
+			this.panelLeft.Size = new System.Drawing.Size(182, 418);
+			this.panelLeft.TabIndex = 3;
+			// 
+			// panelLabel3
+			// 
+			this.panelLabel3.BackColor = System.Drawing.Color.Goldenrod;
+			this.panelLabel3.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panelLabel3.Location = new System.Drawing.Point(0, 0);
+			this.panelLabel3.Name = "panelLabel3";
+			this.panelLabel3.Size = new System.Drawing.Size(5, 418);
+			this.panelLabel3.TabIndex = 0;
+			// 
+			// listBox1
+			// 
+			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
+			this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::MyTool_ListFusen.Properties.Settings.Default, "listBoxFStyle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::MyTool_ListFusen.Properties.Settings.Default, "listBoxFColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.listBox1.Font = global::MyTool_ListFusen.Properties.Settings.Default.listBoxFStyle;
+			this.listBox1.ForeColor = global::MyTool_ListFusen.Properties.Settings.Default.listBoxFColor;
+			this.listBox1.FormattingEnabled = true;
+			this.listBox1.ItemHeight = 20;
+			this.listBox1.Location = new System.Drawing.Point(17, 9);
+			this.listBox1.Name = "listBox1";
+			this.listBox1.Size = new System.Drawing.Size(162, 400);
+			this.listBox1.TabIndex = 1;
+			this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
+			this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
+			// 
+			// panelRight
+			// 
+			this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.panelRight.Controls.Add(this.textBox1);
+			this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelRight.Location = new System.Drawing.Point(0, 0);
+			this.panelRight.Name = "panelRight";
+			this.panelRight.Size = new System.Drawing.Size(498, 418);
+			this.panelRight.TabIndex = 0;
+			// 
+			// textBox1
+			// 
+			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::MyTool_ListFusen.Properties.Settings.Default, "textBoxFStyle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::MyTool_ListFusen.Properties.Settings.Default, "textBoxFColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.textBox1.Font = global::MyTool_ListFusen.Properties.Settings.Default.textBoxFStyle;
+			this.textBox1.ForeColor = global::MyTool_ListFusen.Properties.Settings.Default.textBoxFColor;
+			this.textBox1.Location = new System.Drawing.Point(14, 9);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(474, 400);
+			this.textBox1.TabIndex = 0;
+			this.textBox1.WordWrap = false;
+			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -448,27 +474,26 @@
 			this.ControlBox = false;
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.panelButton);
-			this.MinimumSize = new System.Drawing.Size(500, 220);
+			this.MinimumSize = new System.Drawing.Size(526, 220);
 			this.Name = "Form1";
+			this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.panelButton.ResumeLayout(false);
 			this.panelUP.ResumeLayout(false);
 			this.panelUP.PerformLayout();
-			this.panelLeft.ResumeLayout(false);
-			this.panelRight.ResumeLayout(false);
-			this.panelRight.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.panelLeft.ResumeLayout(false);
+			this.panelRight.ResumeLayout(false);
+			this.panelRight.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.Panel panelButton;
 		private System.Windows.Forms.Panel panelLeft;
 		private System.Windows.Forms.Panel panelRight;
@@ -478,7 +503,6 @@
 		private System.Windows.Forms.Panel panelLabel3;
 		private System.Windows.Forms.Panel panelLabel1;
 		private System.Windows.Forms.Panel panelLabel2;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label labelSaved;
 		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.Button buttonUp;
@@ -493,6 +517,9 @@
 		private System.Windows.Forms.Button buttonExport;
 		private System.Windows.Forms.Panel panelLine;
 		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.Button buttonSettings;
+		public System.Windows.Forms.ListBox listBox1;
+		public System.Windows.Forms.TextBox textBox1;
 	}
 }
 
