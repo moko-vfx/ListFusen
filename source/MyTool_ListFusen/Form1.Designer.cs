@@ -376,7 +376,7 @@
 			this.labelTitle.Name = "labelTitle";
 			this.labelTitle.Size = new System.Drawing.Size(125, 15);
 			this.labelTitle.TabIndex = 1;
-			this.labelTitle.Text = "L I S T  F U S E N　v1.02";
+			this.labelTitle.Text = "L I S T  F U S E N　v1.03";
 			// 
 			// splitContainer1
 			// 
@@ -449,6 +449,7 @@
 			// 
 			// textBox1
 			// 
+			this.textBox1.AcceptsTab = true;
 			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
