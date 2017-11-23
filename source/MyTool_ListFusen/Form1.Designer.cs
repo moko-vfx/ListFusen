@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panelButton = new System.Windows.Forms.Panel();
 			this.panelLine = new System.Windows.Forms.Panel();
 			this.buttonFront = new System.Windows.Forms.Button();
@@ -55,6 +56,10 @@
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.panelRight = new System.Windows.Forms.Panel();
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.panelBarTop = new System.Windows.Forms.Panel();
+			this.panelBarBottom = new System.Windows.Forms.Panel();
+			this.panelBarLeft = new System.Windows.Forms.Panel();
+			this.panelBarRight = new System.Windows.Forms.Panel();
 			this.panelButton.SuspendLayout();
 			this.panelUP.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -83,9 +88,9 @@
 			this.panelButton.Controls.Add(this.panelLabel2);
 			this.panelButton.Controls.Add(this.panelUP);
 			this.panelButton.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelButton.Location = new System.Drawing.Point(0, 0);
+			this.panelButton.Location = new System.Drawing.Point(5, 5);
 			this.panelButton.Name = "panelButton";
-			this.panelButton.Size = new System.Drawing.Size(684, 58);
+			this.panelButton.Size = new System.Drawing.Size(674, 58);
 			this.panelButton.TabIndex = 1;
 			this.panelButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelButton_MouseDown);
 			this.panelButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelButton_MouseMove);
@@ -107,7 +112,7 @@
 			this.buttonFront.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonFront.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.buttonFront.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonFront.Location = new System.Drawing.Point(627, 18);
+			this.buttonFront.Location = new System.Drawing.Point(617, 18);
 			this.buttonFront.Name = "buttonFront";
 			this.buttonFront.Size = new System.Drawing.Size(33, 37);
 			this.buttonFront.TabIndex = 2;
@@ -125,7 +130,7 @@
 			this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonSave.Location = new System.Drawing.Point(586, 18);
+			this.buttonSave.Location = new System.Drawing.Point(576, 18);
 			this.buttonSave.Name = "buttonSave";
 			this.buttonSave.Size = new System.Drawing.Size(33, 37);
 			this.buttonSave.TabIndex = 2;
@@ -326,7 +331,7 @@
 			this.panelUP.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelUP.Location = new System.Drawing.Point(0, 0);
 			this.panelUP.Name = "panelUP";
-			this.panelUP.Size = new System.Drawing.Size(684, 17);
+			this.panelUP.Size = new System.Drawing.Size(674, 17);
 			this.panelUP.TabIndex = 0;
 			this.panelUP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUP_MouseDown);
 			this.panelUP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUP_MouseMove);
@@ -346,7 +351,7 @@
 			this.labelEsc.AutoSize = true;
 			this.labelEsc.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.labelEsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(128)))), ((int)(((byte)(119)))));
-			this.labelEsc.Location = new System.Drawing.Point(666, 0);
+			this.labelEsc.Location = new System.Drawing.Point(656, 0);
 			this.labelEsc.Name = "labelEsc";
 			this.labelEsc.Size = new System.Drawing.Size(16, 18);
 			this.labelEsc.TabIndex = 3;
@@ -360,7 +365,7 @@
 			this.labelSaved.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(210)))), ((int)(((byte)(30)))));
 			this.labelSaved.Font = new System.Drawing.Font("メイリオ", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.labelSaved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(8)))), ((int)(((byte)(9)))));
-			this.labelSaved.Location = new System.Drawing.Point(574, 1);
+			this.labelSaved.Location = new System.Drawing.Point(564, 1);
 			this.labelSaved.Name = "labelSaved";
 			this.labelSaved.Size = new System.Drawing.Size(62, 15);
 			this.labelSaved.TabIndex = 2;
@@ -376,14 +381,14 @@
 			this.labelTitle.Name = "labelTitle";
 			this.labelTitle.Size = new System.Drawing.Size(125, 15);
 			this.labelTitle.TabIndex = 1;
-			this.labelTitle.Text = "L I S T  F U S E N　v1.03";
+			this.labelTitle.Text = "L I S T  F U S E N　v1.04";
 			// 
 			// splitContainer1
 			// 
 			this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(42)))));
 			this.splitContainer1.DataBindings.Add(new System.Windows.Forms.Binding("SplitterDistance", global::MyTool_ListFusen.Properties.Settings.Default, "splitDist", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point(0, 58);
+			this.splitContainer1.Location = new System.Drawing.Point(5, 63);
 			this.splitContainer1.Name = "splitContainer1";
 			// 
 			// splitContainer1.Panel1
@@ -393,7 +398,7 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.panelRight);
-			this.splitContainer1.Size = new System.Drawing.Size(684, 418);
+			this.splitContainer1.Size = new System.Drawing.Size(674, 408);
 			this.splitContainer1.SplitterDistance = global::MyTool_ListFusen.Properties.Settings.Default.splitDist;
 			this.splitContainer1.TabIndex = 4;
 			// 
@@ -405,7 +410,7 @@
 			this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelLeft.Location = new System.Drawing.Point(0, 0);
 			this.panelLeft.Name = "panelLeft";
-			this.panelLeft.Size = new System.Drawing.Size(182, 418);
+			this.panelLeft.Size = new System.Drawing.Size(179, 408);
 			this.panelLeft.TabIndex = 3;
 			// 
 			// panelLabel3
@@ -414,7 +419,7 @@
 			this.panelLabel3.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelLabel3.Location = new System.Drawing.Point(0, 0);
 			this.panelLabel3.Name = "panelLabel3";
-			this.panelLabel3.Size = new System.Drawing.Size(5, 418);
+			this.panelLabel3.Size = new System.Drawing.Size(5, 408);
 			this.panelLabel3.TabIndex = 0;
 			// 
 			// listBox1
@@ -432,7 +437,7 @@
 			this.listBox1.ItemHeight = 20;
 			this.listBox1.Location = new System.Drawing.Point(17, 9);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(162, 400);
+			this.listBox1.Size = new System.Drawing.Size(159, 380);
 			this.listBox1.TabIndex = 1;
 			this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
 			this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
@@ -444,7 +449,7 @@
 			this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelRight.Location = new System.Drawing.Point(0, 0);
 			this.panelRight.Name = "panelRight";
-			this.panelRight.Size = new System.Drawing.Size(498, 418);
+			this.panelRight.Size = new System.Drawing.Size(491, 408);
 			this.panelRight.TabIndex = 0;
 			// 
 			// textBox1
@@ -463,10 +468,50 @@
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(472, 400);
+			this.textBox1.Size = new System.Drawing.Size(465, 390);
 			this.textBox1.TabIndex = 0;
 			this.textBox1.WordWrap = false;
 			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+			// 
+			// panelBarTop
+			// 
+			this.panelBarTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarTop.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelBarTop.Enabled = false;
+			this.panelBarTop.Location = new System.Drawing.Point(0, 0);
+			this.panelBarTop.Name = "panelBarTop";
+			this.panelBarTop.Size = new System.Drawing.Size(684, 5);
+			this.panelBarTop.TabIndex = 5;
+			// 
+			// panelBarBottom
+			// 
+			this.panelBarBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelBarBottom.Enabled = false;
+			this.panelBarBottom.Location = new System.Drawing.Point(0, 471);
+			this.panelBarBottom.Name = "panelBarBottom";
+			this.panelBarBottom.Size = new System.Drawing.Size(684, 5);
+			this.panelBarBottom.TabIndex = 5;
+			// 
+			// panelBarLeft
+			// 
+			this.panelBarLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarLeft.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panelBarLeft.Enabled = false;
+			this.panelBarLeft.Location = new System.Drawing.Point(0, 5);
+			this.panelBarLeft.Name = "panelBarLeft";
+			this.panelBarLeft.Size = new System.Drawing.Size(5, 466);
+			this.panelBarLeft.TabIndex = 5;
+			// 
+			// panelBarRight
+			// 
+			this.panelBarRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarRight.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panelBarRight.Enabled = false;
+			this.panelBarRight.Location = new System.Drawing.Point(679, 5);
+			this.panelBarRight.Name = "panelBarRight";
+			this.panelBarRight.Size = new System.Drawing.Size(5, 466);
+			this.panelBarRight.TabIndex = 5;
 			// 
 			// Form1
 			// 
@@ -476,8 +521,15 @@
 			this.ControlBox = false;
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.panelButton);
+			this.Controls.Add(this.panelBarRight);
+			this.Controls.Add(this.panelBarLeft);
+			this.Controls.Add(this.panelBarBottom);
+			this.Controls.Add(this.panelBarTop);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(526, 220);
 			this.Name = "Form1";
+			this.Text = "ListFusen";
 			this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
@@ -522,6 +574,10 @@
 		private System.Windows.Forms.Button buttonSettings;
 		public System.Windows.Forms.ListBox listBox1;
 		public System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Panel panelBarTop;
+		private System.Windows.Forms.Panel panelBarBottom;
+		private System.Windows.Forms.Panel panelBarLeft;
+		private System.Windows.Forms.Panel panelBarRight;
 	}
 }
 

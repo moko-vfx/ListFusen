@@ -21,7 +21,7 @@
       <Value Profile="(Default)">204, 206, 208</Value>
     </Setting>
     <Setting Name="splitDist" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">182</Value>
+      <Value Profile="(Default)">179</Value>
     </Setting>
     <Setting Name="autoSave" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

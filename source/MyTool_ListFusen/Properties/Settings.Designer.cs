@@ -97,7 +97,7 @@ namespace MyTool_ListFusen.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("182")]
+        [global::System.Configuration.DefaultSettingValueAttribute("179")]
         public int splitDist {
             get {
                 return ((int)(this["splitDist"]));
