@@ -32,7 +32,8 @@ namespace MyTool_ListFusen
 		public static bool expDo = false;                               // 一括出力を実行するか判定
 		private bool topMost = false;                                   // 最前面表示しているか判定
 		public static Font fstyLB;										// ListBoxのフォントの設定
-		public static Font fstyTB;										// ListBoxのフォントの設定
+		public static Font fstyTB;                                      // ListBoxのフォントの設定
+		public static bool wwrapDo;										// 右端で折り返すか判定
 		public static Color fcolLB;										// TextBoxのフォントカラー
 		public static Color fcolTB;                                     // TextBoxのフォントカラー
 		private Timer timer;											// オートセーブ用のタイマーの定義
@@ -65,6 +66,8 @@ namespace MyTool_ListFusen
 				fcolLB = listBox1.ForeColor;
 				fstyTB = textBox1.Font;
 				fcolTB = textBox1.ForeColor;
+				// 右端で折り返す設定を前回終了時の設定に復元
+				wwrapDo = Properties.Settings.Default.wwrap;
 				// オートセーブ周りの設定を前回終了時の設定に復元
 				autoSaveDo = Properties.Settings.Default.autoSave;
 				deactiveSaveDo = Properties.Settings.Default.deactiveSave;
@@ -87,15 +90,16 @@ namespace MyTool_ListFusen
 				fcolLB = listBox1.ForeColor;
 				fstyTB = textBox1.Font;
 				fcolTB = textBox1.ForeColor;
-
+				// 右端で折り返す設定を前回終了時の設定に復元
+				wwrapDo = Properties.Settings.Default.wwrap;
 				// SplitContainerの分割する距離を前回終了時の設定に復元
 				this.splitContainer1.SplitterDistance = Properties.Settings.Default.splitDist;
-
 				// オートセーブ周りの設定を前回終了時の設定に復元
 				autoSaveDo = Properties.Settings.Default.autoSave;
 				deactiveSaveDo = Properties.Settings.Default.deactiveSave;
 				autoSaveTickId = Properties.Settings.Default.autoSaveTId;
 				autoSaveTick = Properties.Settings.Default.autoSaveT;
+
 				if (autoSaveTick == 0)
 				{
 					//既定値に戻す
@@ -105,6 +109,8 @@ namespace MyTool_ListFusen
 					fcolLB = listBox1.ForeColor;
 					fstyTB = textBox1.Font;
 					fcolTB = textBox1.ForeColor;
+					// 右端で折り返す設定を前回終了時の設定に復元
+					wwrapDo = Properties.Settings.Default.wwrap;
 					// オートセーブ周りの設定を前回終了時の設定に復元
 					autoSaveDo = Properties.Settings.Default.autoSave;
 					deactiveSaveDo = Properties.Settings.Default.deactiveSave;
@@ -112,6 +118,9 @@ namespace MyTool_ListFusen
 					autoSaveTick = Properties.Settings.Default.autoSaveT;
 				}
 			}
+
+			// 右端で折り返す設定を反映
+			textBox1.WordWrap = wwrapDo;
 
 			// テキストファイルの保存フォルダがある場合
 			if (Directory.Exists(TEXTFLD))
@@ -747,6 +756,16 @@ namespace MyTool_ListFusen
 			textBox1.Font = fstyTB;
 			textBox1.ForeColor = fcolTB;
 
+			// 右端で折り返す設定を更新
+			if (wwrapDo == true)
+			{
+				textBox1.WordWrap = true; // 折り返す
+			}
+			else
+			{
+				textBox1.WordWrap = false; // 折り返さない
+			}
+
 			// オートセーブの設定を更新
 			if (autoSaveDo == true)
 			{
@@ -831,6 +850,8 @@ namespace MyTool_ListFusen
 			Properties.Settings.Default.listBoxFColor = this.listBox1.ForeColor;
 			Properties.Settings.Default.textBoxFStyle = this.textBox1.Font;
 			Properties.Settings.Default.textBoxFColor = this.textBox1.ForeColor;
+			// 右端で折り返す設定を記憶する
+			Properties.Settings.Default.wwrap = wwrapDo;
 			// 分割の距離を保存する
 			Properties.Settings.Default.splitDist = this.splitContainer1.SplitterDistance;
 			// オートセーブ関連の設定を保存する

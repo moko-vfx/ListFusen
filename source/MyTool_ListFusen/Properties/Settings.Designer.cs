@@ -154,5 +154,17 @@ namespace MyTool_ListFusen.Properties {
                 this["autoSaveTId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool wwrap {
+            get {
+                return ((bool)(this["wwrap"]));
+            }
+            set {
+                this["wwrap"] = value;
+            }
+        }
     }
 }

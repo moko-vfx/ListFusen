@@ -381,7 +381,7 @@
 			this.labelTitle.Name = "labelTitle";
 			this.labelTitle.Size = new System.Drawing.Size(125, 15);
 			this.labelTitle.TabIndex = 1;
-			this.labelTitle.Text = "L I S T  F U S E N　v1.04";
+			this.labelTitle.Text = "L I S T  F U S E N　v1.05";
 			// 
 			// splitContainer1
 			// 

@@ -14,10 +14,15 @@ namespace MyTool_ListFusen
 		[STAThread]
 		static void Main()
 		{
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			Application.Run(new Form1());
+
 			/*
-			 * 二重起動を禁止する
-			 * https://dobon.net/vb/dotnet/process/checkprevinstance.html
-			 */
+			///
+			/// 二重起動を禁止する
+			/// https://dobon.net/vb/dotnet/process/checkprevinstance.html
+			///
 			//Mutex名を決める（必ずアプリケーション固有の文字列に変更すること！）
 			string mutexName = "LisetFusen";
 			//Mutexオブジェクトを作成する
@@ -59,6 +64,7 @@ namespace MyTool_ListFusen
 				}
 				mutex.Close();
 			}
+			*/
 		}
 	}
 }

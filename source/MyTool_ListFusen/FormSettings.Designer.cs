@@ -35,6 +35,7 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.comboBoxTick = new System.Windows.Forms.ComboBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.buttonResetLB = new System.Windows.Forms.Button();
 			this.buttonFColorLB = new System.Windows.Forms.Button();
 			this.buttonFStyleLB = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
 			this.checkBoxDeactiveSave = new System.Windows.Forms.CheckBox();
 			this.buttonOK = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.buttonResetTB = new System.Windows.Forms.Button();
 			this.buttonFColorTB = new System.Windows.Forms.Button();
 			this.buttonFStyleTB = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
@@ -51,8 +53,8 @@
 			this.colorDialogTB = new System.Windows.Forms.ColorDialog();
 			this.fontDialogTB = new System.Windows.Forms.FontDialog();
 			this.fontDialogLB = new System.Windows.Forms.FontDialog();
-			this.buttonResetLB = new System.Windows.Forms.Button();
-			this.buttonResetTB = new System.Windows.Forms.Button();
+			this.checkBoxWordWrap = new System.Windows.Forms.CheckBox();
+			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -132,17 +134,28 @@
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.groupBox1.Location = new System.Drawing.Point(12, 16);
+			this.groupBox1.Location = new System.Drawing.Point(12, 141);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(203, 98);
-			this.groupBox1.TabIndex = 1;
+			this.groupBox1.Size = new System.Drawing.Size(419, 68);
+			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "リスト";
+			// 
+			// buttonResetLB
+			// 
+			this.buttonResetLB.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.buttonResetLB.Location = new System.Drawing.Point(292, 26);
+			this.buttonResetLB.Name = "buttonResetLB";
+			this.buttonResetLB.Size = new System.Drawing.Size(60, 27);
+			this.buttonResetLB.TabIndex = 4;
+			this.buttonResetLB.Text = "初期値";
+			this.buttonResetLB.UseVisualStyleBackColor = true;
+			this.buttonResetLB.Click += new System.EventHandler(this.buttonResetLB_Click);
 			// 
 			// buttonFColorLB
 			// 
 			this.buttonFColorLB.Font = new System.Drawing.Font("メイリオ", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.buttonFColorLB.Location = new System.Drawing.Point(86, 58);
+			this.buttonFColorLB.Location = new System.Drawing.Point(202, 26);
 			this.buttonFColorLB.Name = "buttonFColorLB";
 			this.buttonFColorLB.Size = new System.Drawing.Size(27, 27);
 			this.buttonFColorLB.TabIndex = 3;
@@ -156,7 +169,7 @@
 			this.buttonFStyleLB.Location = new System.Drawing.Point(86, 27);
 			this.buttonFStyleLB.Name = "buttonFStyleLB";
 			this.buttonFStyleLB.Size = new System.Drawing.Size(27, 27);
-			this.buttonFStyleLB.TabIndex = 2;
+			this.buttonFStyleLB.TabIndex = 1;
 			this.buttonFStyleLB.Text = "...";
 			this.buttonFStyleLB.UseVisualStyleBackColor = true;
 			this.buttonFStyleLB.Click += new System.EventHandler(this.buttonFStyleLB_Click);
@@ -165,10 +178,10 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.label2.Location = new System.Drawing.Point(16, 63);
+			this.label2.Location = new System.Drawing.Point(132, 31);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(61, 20);
-			this.label2.TabIndex = 1;
+			this.label2.TabIndex = 2;
 			this.label2.Text = "文字の色";
 			// 
 			// groupBox2
@@ -180,7 +193,7 @@
 			this.groupBox2.Controls.Add(this.label3);
 			this.groupBox2.Controls.Add(this.checkBoxAutoSave);
 			this.groupBox2.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.groupBox2.Location = new System.Drawing.Point(12, 124);
+			this.groupBox2.Location = new System.Drawing.Point(12, 222);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(421, 98);
 			this.groupBox2.TabIndex = 3;
@@ -211,7 +224,7 @@
 			// buttonOK
 			// 
 			this.buttonOK.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.buttonOK.Location = new System.Drawing.Point(339, 232);
+			this.buttonOK.Location = new System.Drawing.Point(339, 330);
 			this.buttonOK.Name = "buttonOK";
 			this.buttonOK.Size = new System.Drawing.Size(94, 27);
 			this.buttonOK.TabIndex = 4;
@@ -226,19 +239,32 @@
 			this.groupBox3.Controls.Add(this.buttonFColorTB);
 			this.groupBox3.Controls.Add(this.buttonFStyleTB);
 			this.groupBox3.Controls.Add(this.label5);
+			this.groupBox3.Controls.Add(this.label8);
+			this.groupBox3.Controls.Add(this.checkBoxWordWrap);
 			this.groupBox3.Controls.Add(this.label7);
 			this.groupBox3.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.groupBox3.Location = new System.Drawing.Point(228, 16);
+			this.groupBox3.Location = new System.Drawing.Point(12, 17);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(203, 98);
-			this.groupBox3.TabIndex = 2;
+			this.groupBox3.Size = new System.Drawing.Size(419, 111);
+			this.groupBox3.TabIndex = 1;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "テキストエディタ";
+			// 
+			// buttonResetTB
+			// 
+			this.buttonResetTB.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.buttonResetTB.Location = new System.Drawing.Point(292, 26);
+			this.buttonResetTB.Name = "buttonResetTB";
+			this.buttonResetTB.Size = new System.Drawing.Size(60, 27);
+			this.buttonResetTB.TabIndex = 4;
+			this.buttonResetTB.Text = "初期値";
+			this.buttonResetTB.UseVisualStyleBackColor = true;
+			this.buttonResetTB.Click += new System.EventHandler(this.buttonResetTB_Click);
 			// 
 			// buttonFColorTB
 			// 
 			this.buttonFColorTB.Font = new System.Drawing.Font("メイリオ", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.buttonFColorTB.Location = new System.Drawing.Point(86, 58);
+			this.buttonFColorTB.Location = new System.Drawing.Point(202, 26);
 			this.buttonFColorTB.Name = "buttonFColorTB";
 			this.buttonFColorTB.Size = new System.Drawing.Size(27, 27);
 			this.buttonFColorTB.TabIndex = 3;
@@ -252,7 +278,7 @@
 			this.buttonFStyleTB.Location = new System.Drawing.Point(86, 27);
 			this.buttonFStyleTB.Name = "buttonFStyleTB";
 			this.buttonFStyleTB.Size = new System.Drawing.Size(27, 27);
-			this.buttonFStyleTB.TabIndex = 2;
+			this.buttonFStyleTB.TabIndex = 1;
 			this.buttonFStyleTB.Text = "...";
 			this.buttonFStyleTB.UseVisualStyleBackColor = true;
 			this.buttonFStyleTB.Click += new System.EventHandler(this.buttonFStyleTB_Click);
@@ -261,10 +287,10 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.label5.Location = new System.Drawing.Point(16, 63);
+			this.label5.Location = new System.Drawing.Point(132, 31);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(61, 20);
-			this.label5.TabIndex = 1;
+			this.label5.TabIndex = 2;
 			this.label5.Text = "文字の色";
 			// 
 			// label7
@@ -301,33 +327,32 @@
 			this.fontDialogLB.FontMustExist = true;
 			this.fontDialogLB.ShowEffects = false;
 			// 
-			// buttonResetLB
+			// checkBoxWordWrap
 			// 
-			this.buttonResetLB.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.buttonResetLB.Location = new System.Drawing.Point(128, 43);
-			this.buttonResetLB.Name = "buttonResetLB";
-			this.buttonResetLB.Size = new System.Drawing.Size(60, 27);
-			this.buttonResetLB.TabIndex = 4;
-			this.buttonResetLB.Text = "初期値";
-			this.buttonResetLB.UseVisualStyleBackColor = true;
-			this.buttonResetLB.Click += new System.EventHandler(this.buttonResetLB_Click);
+			this.checkBoxWordWrap.AutoSize = true;
+			this.checkBoxWordWrap.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.checkBoxWordWrap.Location = new System.Drawing.Point(20, 75);
+			this.checkBoxWordWrap.Name = "checkBoxWordWrap";
+			this.checkBoxWordWrap.Size = new System.Drawing.Size(15, 14);
+			this.checkBoxWordWrap.TabIndex = 5;
+			this.checkBoxWordWrap.UseVisualStyleBackColor = true;
+			this.checkBoxWordWrap.CheckedChanged += new System.EventHandler(this.checkBoxWordWrap_CheckedChanged);
 			// 
-			// buttonResetTB
+			// label8
 			// 
-			this.buttonResetTB.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.buttonResetTB.Location = new System.Drawing.Point(128, 43);
-			this.buttonResetTB.Name = "buttonResetTB";
-			this.buttonResetTB.Size = new System.Drawing.Size(60, 27);
-			this.buttonResetTB.TabIndex = 4;
-			this.buttonResetTB.Text = "初期値";
-			this.buttonResetTB.UseVisualStyleBackColor = true;
-			this.buttonResetTB.Click += new System.EventHandler(this.buttonResetTB_Click);
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.label8.Location = new System.Drawing.Point(38, 72);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(165, 20);
+			this.label8.TabIndex = 6;
+			this.label8.Text = "テキストを右端で折り返す";
 			// 
 			// FormSettings
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(445, 270);
+			this.ClientSize = new System.Drawing.Size(445, 367);
 			this.ControlBox = false;
 			this.Controls.Add(this.buttonOK);
 			this.Controls.Add(this.panel1);
@@ -380,5 +405,7 @@
 		private System.Windows.Forms.FontDialog fontDialogLB;
 		private System.Windows.Forms.Button buttonResetLB;
 		private System.Windows.Forms.Button buttonResetTB;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.CheckBox checkBoxWordWrap;
 	}
 }

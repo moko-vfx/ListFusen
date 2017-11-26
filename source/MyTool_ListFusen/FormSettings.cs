@@ -20,6 +20,7 @@ namespace MyTool_ListFusen
 		// ロード時にチェックボックスやコンボボックスの表示を最新の状態に更新
 		private void FormSettings_Load(object sender, EventArgs e)
 		{
+			checkBoxWordWrap.Checked = Form1.wwrapDo;
 			checkBoxAutoSave.Checked = Form1.autoSaveDo;
 			checkBoxDeactiveSave.Checked = Form1.deactiveSaveDo;
 			comboBoxTick.SelectedIndex = Form1.autoSaveTickId;
@@ -95,6 +96,18 @@ namespace MyTool_ListFusen
 			Form1.fcolTB = Color.FromArgb(204, 206, 208);
 		}
 
+		// チェックボックス：右端で折り返す
+		private void checkBoxWordWrap_CheckedChanged(object sender, EventArgs e)
+		{
+			if (checkBoxWordWrap.Checked)
+			{
+				Form1.wwrapDo = true; // 右端で折り返す
+			}
+			else
+			{
+				Form1.wwrapDo = false; // 右端で折り返さない
+			}
+		}
 		// チェックボックス：オートセーブ
 		private void checkBoxAutoSave_CheckedChanged(object sender, EventArgs e)
 		{
