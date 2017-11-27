@@ -31,6 +31,7 @@ namespace MyTool_ListFusen
 		public static string expFld = "";                               // 一括出力先を保持
 		public static bool expDo = false;                               // 一括出力を実行するか判定
 		private bool topMost = false;                                   // 最前面表示しているか判定
+		private bool dirty = false;										// テキストに変更があったか判定
 		public static Font fstyLB;										// ListBoxのフォントの設定
 		public static Font fstyTB;                                      // ListBoxのフォントの設定
 		public static bool wwrapDo;										// 右端で折り返すか判定
@@ -53,6 +54,9 @@ namespace MyTool_ListFusen
 		{
 			// Form端をドラッグ＆ドロップでサイズ変更可能にする
 			sizeChanger = new DAndDSizeChanger(this, this, DAndDArea.All, 8);
+
+			// TextBoxの内容が変化した時のイベントをここでOFFにする
+			textBox1.TextChanged -= textBox1_TextChanged;
 
 			// 前回終了時のウインドウ位置とサイズを取得する
 			if (Properties.Settings.Default.FormSize.Width == 0 || Properties.Settings.Default.FormSize.Height == 0)
@@ -277,6 +281,9 @@ namespace MyTool_ListFusen
 		// イベント：ListBoxのアイテムの選択先を変えた時
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			// TextBoxの内容が変化した時のイベントをここでOFFにする
+			textBox1.TextChanged -= textBox1_TextChanged;
+
 			MemoryTextData();
 			ShowTextData();
 		}
@@ -295,6 +302,10 @@ namespace MyTool_ListFusen
 			// 選択アイテムの付箋データにアクセスして表示
 			FusenData fdata = (FusenData)listBox1.Items[listBox1.SelectedIndex];
 			textBox1.Text = fdata.ftext;
+
+			// TextBoxの内容が変化した時のイベントをここでONにする
+			textBox1.TextChanged += textBox1_TextChanged;
+
 			// lbSelId更新
 			lbSelId = listBox1.SelectedIndex;
 		}
@@ -517,6 +528,10 @@ namespace MyTool_ListFusen
 					fdata.ftext,
                     ENCODE);
 			}
+
+			// Dirtyマークを消す
+			dirty = false;
+			panelDirty.Visible = false;
 
 			showSaved();
 		}
@@ -815,6 +830,12 @@ namespace MyTool_ListFusen
 			{
 				SaveAll();
 			}
+		}
+		// イベント：テキストに変更があればDirtyマークを付ける
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			dirty = true;
+			panelDirty.Visible = true;
 		}
 
 		// ボタン：最前面表示 ON / OFF のトグル
@@ -1160,5 +1181,6 @@ namespace MyTool_ListFusen
 			Right = 8,
 			All = 15
 		}
+
 	}
 }

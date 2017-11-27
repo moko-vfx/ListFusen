@@ -7,11 +7,7 @@
 　テキストデータを管理しています。
 　（こちらの直接編集は想定していませんので自己責任でお願いします）
 
-・全テキストデータをtxtファイルで一括出力する機能を追加しました。
-　ただし現状はリスト名の重複チェックはしていないので
-　名前が被らない状態で出力してください。
-
-・ツールの位置とサイズを下記ファイルに記憶させています。
+・ツールの各種設定を下記ファイルに記憶させています。
 　C:\Users\wate\AppData\Local\SaveRestoreFormPosSize\SaveRestoreFormPosSize.ex_Url_jfnqfasd54hfdsmzfdaketeakl435c\1.0.0.0\user.config
 　こちらを参考にしました。
 　https://www.wareko.jp/blog/c-sharp-form-application-save-restore-window-state-position-size
