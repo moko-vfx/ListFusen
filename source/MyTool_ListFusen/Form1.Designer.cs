@@ -31,6 +31,7 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panelButton = new System.Windows.Forms.Panel();
+			this.panelDirty = new System.Windows.Forms.Panel();
 			this.panelLine = new System.Windows.Forms.Panel();
 			this.buttonFront = new System.Windows.Forms.Button();
 			this.buttonSave = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
 			this.panelBarBottom = new System.Windows.Forms.Panel();
 			this.panelBarLeft = new System.Windows.Forms.Panel();
 			this.panelBarRight = new System.Windows.Forms.Panel();
-			this.panelDirty = new System.Windows.Forms.Panel();
 			this.panelButton.SuspendLayout();
 			this.panelUP.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -96,6 +96,16 @@
 			this.panelButton.TabIndex = 1;
 			this.panelButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelButton_MouseDown);
 			this.panelButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelButton_MouseMove);
+			// 
+			// panelDirty
+			// 
+			this.panelDirty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.panelDirty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(150)))), ((int)(((byte)(30)))));
+			this.panelDirty.Location = new System.Drawing.Point(583, 45);
+			this.panelDirty.Name = "panelDirty";
+			this.panelDirty.Size = new System.Drawing.Size(20, 4);
+			this.panelDirty.TabIndex = 1;
+			this.panelDirty.Visible = false;
 			// 
 			// panelLine
 			// 
@@ -383,7 +393,7 @@
 			this.labelTitle.Name = "labelTitle";
 			this.labelTitle.Size = new System.Drawing.Size(125, 15);
 			this.labelTitle.TabIndex = 1;
-			this.labelTitle.Text = "L I S T  F U S E N　v1.05";
+			this.labelTitle.Text = "L I S T  F U S E N　v1.06";
 			// 
 			// splitContainer1
 			// 
@@ -515,16 +525,6 @@
 			this.panelBarRight.Name = "panelBarRight";
 			this.panelBarRight.Size = new System.Drawing.Size(5, 466);
 			this.panelBarRight.TabIndex = 5;
-			// 
-			// panelDirty
-			// 
-			this.panelDirty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.panelDirty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(150)))), ((int)(((byte)(30)))));
-			this.panelDirty.Location = new System.Drawing.Point(583, 45);
-			this.panelDirty.Name = "panelDirty";
-			this.panelDirty.Size = new System.Drawing.Size(20, 4);
-			this.panelDirty.TabIndex = 1;
-			this.panelDirty.Visible = false;
 			// 
 			// Form1
 			// 
