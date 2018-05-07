@@ -51,16 +51,16 @@
 			this.labelSaved = new System.Windows.Forms.Label();
 			this.labelTitle = new System.Windows.Forms.Label();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.panelBarTop = new System.Windows.Forms.Panel();
+			this.panelBarBottom = new System.Windows.Forms.Panel();
+			this.panelBarLeft = new System.Windows.Forms.Panel();
+			this.panelBarRight = new System.Windows.Forms.Panel();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.panelLeft = new System.Windows.Forms.Panel();
 			this.panelLabel3 = new System.Windows.Forms.Panel();
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.panelRight = new System.Windows.Forms.Panel();
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.panelBarTop = new System.Windows.Forms.Panel();
-			this.panelBarBottom = new System.Windows.Forms.Panel();
-			this.panelBarLeft = new System.Windows.Forms.Panel();
-			this.panelBarRight = new System.Windows.Forms.Panel();
 			this.panelButton.SuspendLayout();
 			this.panelUP.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -326,7 +326,7 @@
 			// 
 			// panelLabel2
 			// 
-			this.panelLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(130)))), ((int)(((byte)(45)))));
+			this.panelLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(128)))), ((int)(((byte)(60)))));
 			this.panelLabel2.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelLabel2.Location = new System.Drawing.Point(0, 17);
 			this.panelLabel2.Name = "panelLabel2";
@@ -350,7 +350,7 @@
 			// 
 			// panelLabel1
 			// 
-			this.panelLabel1.BackColor = System.Drawing.Color.Goldenrod;
+			this.panelLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(175)))), ((int)(((byte)(50)))));
 			this.panelLabel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelLabel1.Location = new System.Drawing.Point(0, 0);
 			this.panelLabel1.Name = "panelLabel1";
@@ -374,7 +374,7 @@
 			// 
 			this.labelSaved.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelSaved.AutoSize = true;
-			this.labelSaved.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(210)))), ((int)(((byte)(30)))));
+			this.labelSaved.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(200)))), ((int)(((byte)(30)))));
 			this.labelSaved.Font = new System.Drawing.Font("メイリオ", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.labelSaved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(8)))), ((int)(((byte)(9)))));
 			this.labelSaved.Location = new System.Drawing.Point(561, 1);
@@ -388,12 +388,52 @@
 			// 
 			this.labelTitle.AutoSize = true;
 			this.labelTitle.Font = new System.Drawing.Font("メイリオ", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(159)))));
+			this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(164)))), ((int)(((byte)(156)))));
 			this.labelTitle.Location = new System.Drawing.Point(11, 1);
 			this.labelTitle.Name = "labelTitle";
 			this.labelTitle.Size = new System.Drawing.Size(125, 15);
 			this.labelTitle.TabIndex = 1;
-			this.labelTitle.Text = "L I S T  F U S E N　v1.06";
+			this.labelTitle.Text = "L I S T  F U S E N　v1.07";
+			// 
+			// panelBarTop
+			// 
+			this.panelBarTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarTop.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelBarTop.Enabled = false;
+			this.panelBarTop.Location = new System.Drawing.Point(0, 0);
+			this.panelBarTop.Name = "panelBarTop";
+			this.panelBarTop.Size = new System.Drawing.Size(684, 5);
+			this.panelBarTop.TabIndex = 5;
+			// 
+			// panelBarBottom
+			// 
+			this.panelBarBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelBarBottom.Enabled = false;
+			this.panelBarBottom.Location = new System.Drawing.Point(0, 471);
+			this.panelBarBottom.Name = "panelBarBottom";
+			this.panelBarBottom.Size = new System.Drawing.Size(684, 5);
+			this.panelBarBottom.TabIndex = 5;
+			// 
+			// panelBarLeft
+			// 
+			this.panelBarLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarLeft.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panelBarLeft.Enabled = false;
+			this.panelBarLeft.Location = new System.Drawing.Point(0, 5);
+			this.panelBarLeft.Name = "panelBarLeft";
+			this.panelBarLeft.Size = new System.Drawing.Size(5, 466);
+			this.panelBarLeft.TabIndex = 5;
+			// 
+			// panelBarRight
+			// 
+			this.panelBarRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
+			this.panelBarRight.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panelBarRight.Enabled = false;
+			this.panelBarRight.Location = new System.Drawing.Point(679, 5);
+			this.panelBarRight.Name = "panelBarRight";
+			this.panelBarRight.Size = new System.Drawing.Size(5, 466);
+			this.panelBarRight.TabIndex = 5;
 			// 
 			// splitContainer1
 			// 
@@ -427,7 +467,7 @@
 			// 
 			// panelLabel3
 			// 
-			this.panelLabel3.BackColor = System.Drawing.Color.Goldenrod;
+			this.panelLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(175)))), ((int)(((byte)(50)))));
 			this.panelLabel3.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelLabel3.Location = new System.Drawing.Point(0, 0);
 			this.panelLabel3.Name = "panelLabel3";
@@ -485,46 +525,6 @@
 			this.textBox1.WordWrap = false;
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-			// 
-			// panelBarTop
-			// 
-			this.panelBarTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
-			this.panelBarTop.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelBarTop.Enabled = false;
-			this.panelBarTop.Location = new System.Drawing.Point(0, 0);
-			this.panelBarTop.Name = "panelBarTop";
-			this.panelBarTop.Size = new System.Drawing.Size(684, 5);
-			this.panelBarTop.TabIndex = 5;
-			// 
-			// panelBarBottom
-			// 
-			this.panelBarBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
-			this.panelBarBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelBarBottom.Enabled = false;
-			this.panelBarBottom.Location = new System.Drawing.Point(0, 471);
-			this.panelBarBottom.Name = "panelBarBottom";
-			this.panelBarBottom.Size = new System.Drawing.Size(684, 5);
-			this.panelBarBottom.TabIndex = 5;
-			// 
-			// panelBarLeft
-			// 
-			this.panelBarLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
-			this.panelBarLeft.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panelBarLeft.Enabled = false;
-			this.panelBarLeft.Location = new System.Drawing.Point(0, 5);
-			this.panelBarLeft.Name = "panelBarLeft";
-			this.panelBarLeft.Size = new System.Drawing.Size(5, 466);
-			this.panelBarLeft.TabIndex = 5;
-			// 
-			// panelBarRight
-			// 
-			this.panelBarRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(232)))));
-			this.panelBarRight.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panelBarRight.Enabled = false;
-			this.panelBarRight.Location = new System.Drawing.Point(679, 5);
-			this.panelBarRight.Name = "panelBarRight";
-			this.panelBarRight.Size = new System.Drawing.Size(5, 466);
-			this.panelBarRight.TabIndex = 5;
 			// 
 			// Form1
 			// 

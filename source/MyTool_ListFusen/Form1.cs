@@ -33,10 +33,12 @@ namespace MyTool_ListFusen
 		private bool topMost = false;                                   // 最前面表示しているか判定
 		private bool dirty = false;										// テキストに変更があったか判定
 		public static Font fstyLB;										// ListBoxのフォントの設定
-		public static Font fstyTB;                                      // ListBoxのフォントの設定
+		public static Font fstyTB;                                      // TextBoxのフォントの設定
 		public static bool wwrapDo;										// 右端で折り返すか判定
 		public static Color fcolLB;										// TextBoxのフォントカラー
-		public static Color fcolTB;                                     // TextBoxのフォントカラー
+		public static Color fcolTB;                                     // ListBoxのフォントカラー
+		public static Color pcol1;										// アクセントカラー(メイン)
+		public static Color pcol2;                                      // アクセントカラー(サブ)
 		private Timer timer;											// オートセーブ用のタイマーの定義
 		public static bool autoSaveDo;									// オートセーブするか判定
 		public static bool deactiveSaveDo;                              // 非アクティブ時セーブするか判定
@@ -89,11 +91,20 @@ namespace MyTool_ListFusen
 				this.listBox1.ForeColor = Properties.Settings.Default.listBoxFColor;
 				this.textBox1.Font = Properties.Settings.Default.textBoxFStyle;
 				this.textBox1.ForeColor = Properties.Settings.Default.textBoxFColor;
+				// パネルのアクセントカラー設定を前回終了時の設定に復元
+				this.panelLabel1.BackColor = Properties.Settings.Default.panelColor1;
+				this.panelLabel2.BackColor = Properties.Settings.Default.panelColor2;
+				this.panelLabel3.BackColor = Properties.Settings.Default.panelColor1;
+
 				// フォント周りの変数の初期化
 				fstyLB = listBox1.Font;
 				fcolLB = listBox1.ForeColor;
 				fstyTB = textBox1.Font;
 				fcolTB = textBox1.ForeColor;
+				// パネルのアクセントカラーの初期化
+				pcol1 = panelLabel1.BackColor;
+				pcol2 = panelLabel2.BackColor;
+
 				// 右端で折り返す設定を前回終了時の設定に復元
 				wwrapDo = Properties.Settings.Default.wwrap;
 				// SplitContainerの分割する距離を前回終了時の設定に復元
@@ -222,8 +233,8 @@ namespace MyTool_ListFusen
 		 */
 		public class FusenData
 		{
-			public string fname = "";		// ListBoxでの表示名を保持
-			public string ftext = "";    // ListBoxと連動するテキストデータを保持
+			public string fname = "";	// ListBoxでの表示名を保持
+			public string ftext = "";	// ListBoxと連動するテキストデータを保持
 
 			// コンストラクタで情報を代入
 			public FusenData(string ln, string td)
@@ -771,6 +782,11 @@ namespace MyTool_ListFusen
 			textBox1.Font = fstyTB;
 			textBox1.ForeColor = fcolTB;
 
+			// パネルのカラーを更新
+			panelLabel1.BackColor = pcol1;
+			panelLabel2.BackColor = pcol2;
+			panelLabel3.BackColor = pcol1;
+
 			// 右端で折り返す設定を更新
 			if (wwrapDo == true)
 			{
@@ -871,6 +887,9 @@ namespace MyTool_ListFusen
 			Properties.Settings.Default.listBoxFColor = this.listBox1.ForeColor;
 			Properties.Settings.Default.textBoxFStyle = this.textBox1.Font;
 			Properties.Settings.Default.textBoxFColor = this.textBox1.ForeColor;
+			// アクセントカラーの設定を記憶する
+			Properties.Settings.Default.panelColor1 = this.panelLabel1.BackColor;
+			Properties.Settings.Default.panelColor2 = this.panelLabel2.BackColor;
 			// 右端で折り返す設定を記憶する
 			Properties.Settings.Default.wwrap = wwrapDo;
 			// 分割の距離を保存する
@@ -972,6 +991,7 @@ namespace MyTool_ListFusen
 
 		/// <summary>
 		/// コントロールの端をD＆Dすることによってサイズを変更出来る機能を提供するクラス
+		/// こちらの記事のコードを利用させていただいています
 		/// http://anis774.net/codevault/danddsizechanger.html
 		/// </summary>
 		class DAndDSizeChanger
@@ -1181,6 +1201,5 @@ namespace MyTool_ListFusen
 			Right = 8,
 			All = 15
 		}
-
 	}
 }

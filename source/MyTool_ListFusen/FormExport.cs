@@ -23,6 +23,9 @@ namespace MyTool_ListFusen
 			// TextBoxにデフォルトでデスクトップパスを表示
 			this.textBoxExport.Text = 
 				Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+
+			// 上部のパネルの色を更新
+			panel1.BackColor = Form1.pcol1;
 		}
 
 		// ボタン：参照

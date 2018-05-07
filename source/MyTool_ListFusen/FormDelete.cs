@@ -26,6 +26,9 @@ namespace MyTool_ListFusen
 			selName = Form1.lbSelName; // staticにしたので取得できる
 									   // リネーム用TextBoxに表示
 			this.labelSelItem.Text = "\" " + selName + " \"";
+
+			// 上部のパネルの色を更新
+			panel1.BackColor = Form1.pcol1;
 		}
 
 		// ボタン：OK ListBoxに新しい名前を反映

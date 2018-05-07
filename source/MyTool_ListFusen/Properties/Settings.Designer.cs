@@ -166,5 +166,29 @@ namespace MyTool_ListFusen.Properties {
                 this["wwrap"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("140, 175, 50")]
+        public global::System.Drawing.Color panelColor1 {
+            get {
+                return ((global::System.Drawing.Color)(this["panelColor1"]));
+            }
+            set {
+                this["panelColor1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 128, 60")]
+        public global::System.Drawing.Color panelColor2 {
+            get {
+                return ((global::System.Drawing.Color)(this["panelColor2"]));
+            }
+            set {
+                this["panelColor2"] = value;
+            }
+        }
     }
 }

@@ -38,5 +38,11 @@
     <Setting Name="wwrap" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="panelColor1" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">140, 175, 50</Value>
+    </Setting>
+    <Setting Name="panelColor2" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">100, 128, 60</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
