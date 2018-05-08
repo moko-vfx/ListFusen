@@ -52,8 +52,106 @@ namespace MyTool_ListFusen
 			InitializeComponent();
 		}
 
+		// Form1オブジェクトを保持するためのフィールド
+		private static Form1 _form1Instance;
+		// Form1オブジェクトを取得、設定するためのプロパティ
+		public static Form1 Form1Instance
+		{
+			get
+			{
+				return _form1Instance;
+			}
+			set
+			{
+				_form1Instance = value;
+			}
+		}
+		// 設定パネルから直接Form1のコントロールの値を変更するためのプロパティ
+		public Font listBoxFont
+		{
+			get
+			{
+				return listBox1.Font;
+			}
+			set
+			{
+				listBox1.Font = value;
+			}
+		}
+		public Color listBoxForeCol
+		{
+			get
+			{
+				return listBox1.ForeColor;
+			}
+			set
+			{
+				listBox1.ForeColor = value;
+			}
+		}
+		public Font textBoxFont
+		{
+			get
+			{
+				return textBox1.Font;
+			}
+			set
+			{
+				textBox1.Font = value;
+			}
+		}
+		public Color textBoxForeCol
+		{
+			get
+			{
+				return textBox1.ForeColor;
+			}
+			set
+			{
+				textBox1.ForeColor = value;
+			}
+		}
+		public Color panelLabel1Col
+		{
+			get
+			{
+				return panelLabel1.BackColor;
+			}
+			set
+			{
+				panelLabel1.BackColor = value;
+			}
+		}
+		public Color panelLabel2Col
+		{
+			get
+			{
+				return panelLabel2.BackColor;
+			}
+			set
+			{
+				panelLabel2.BackColor = value;
+			}
+		}
+		public Color panelLabel3Col
+		{
+			get
+			{
+				return panelLabel3.BackColor;
+			}
+			set
+			{
+				panelLabel3.BackColor = value;
+			}
+		}
+		
+
+		// 起動時にまず実行する内容
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			// 設定パネルから直接Form1のコントロールの値を変更するための準備
+			Form1.Form1Instance = this;
+
 			// Form端をドラッグ＆ドロップでサイズ変更可能にする
 			sizeChanger = new DAndDSizeChanger(this, this, DAndDArea.All, 8);
 
@@ -72,6 +170,9 @@ namespace MyTool_ListFusen
 				fcolLB = listBox1.ForeColor;
 				fstyTB = textBox1.Font;
 				fcolTB = textBox1.ForeColor;
+				// パネルのアクセントカラーの初期化
+				pcol1 = panelLabel1.BackColor;
+				pcol2 = panelLabel2.BackColor;
 				// 右端で折り返す設定を前回終了時の設定に復元
 				wwrapDo = Properties.Settings.Default.wwrap;
 				// オートセーブ周りの設定を前回終了時の設定に復元
@@ -124,6 +225,9 @@ namespace MyTool_ListFusen
 					fcolLB = listBox1.ForeColor;
 					fstyTB = textBox1.Font;
 					fcolTB = textBox1.ForeColor;
+					// パネルのアクセントカラーの初期化
+					pcol1 = panelLabel1.BackColor;
+					pcol2 = panelLabel2.BackColor;
 					// 右端で折り返す設定を前回終了時の設定に復元
 					wwrapDo = Properties.Settings.Default.wwrap;
 					// オートセーブ周りの設定を前回終了時の設定に復元

@@ -38,6 +38,8 @@ namespace MyTool_ListFusen
 				{
 					// ListBox1のフォントを変える
 					Form1.fstyLB = fontDialogLB.Font;
+					// フォントの設定を更新
+					Form1.Form1Instance.listBoxFont = Form1.fstyLB;
 				}
 			}
 			catch (ArgumentException)
@@ -54,6 +56,8 @@ namespace MyTool_ListFusen
 			{
 				// ListBox1のフォントカラーを変える
 				Form1.fcolLB = colorDialogLB.Color;
+				// フォントの設定を更新
+				Form1.Form1Instance.listBoxForeCol = Form1.fcolLB;
 			}
 		}
 		// ボタン：Form1のテキストボックスのフォントスタイルを変更
@@ -66,6 +70,8 @@ namespace MyTool_ListFusen
 				{
 					// TextBox1のフォントを変える
 					Form1.fstyTB = fontDialogTB.Font;
+					// フォントの設定を更新
+					Form1.Form1Instance.textBoxFont = Form1.fstyTB;
 				}
 			}
 			catch (ArgumentException)
@@ -82,6 +88,8 @@ namespace MyTool_ListFusen
 			{
 				// TextBox1のフォントカラーを変える
 				Form1.fcolTB = colorDialogTB.Color;
+				// フォントの設定を更新
+				Form1.Form1Instance.textBoxForeCol = Form1.fcolTB;
 			}
 		}
 
@@ -90,12 +98,18 @@ namespace MyTool_ListFusen
 		{
 			Form1.fstyLB = new Font("メイリオ", 10);
 			Form1.fcolLB = Color.FromArgb(204, 206, 208);
+			// フォントの設定を更新
+			Form1.Form1Instance.listBoxFont = Form1.fstyLB;
+			Form1.Form1Instance.listBoxForeCol = Form1.fcolLB;
 		}
 		// ボタン：TextBoxの初期化
 		private void buttonResetTB_Click(object sender, EventArgs e)
 		{
 			Form1.fstyTB = new Font("メイリオ", 10);
 			Form1.fcolTB = Color.FromArgb(204, 206, 208);
+			// フォントの設定を更新
+			Form1.Form1Instance.textBoxFont = Form1.fstyTB;
+			Form1.Form1Instance.textBoxForeCol = Form1.fcolTB;
 		}
 
 		// ボタン：アクセントカラー(メイン)を変更
@@ -106,12 +120,20 @@ namespace MyTool_ListFusen
 			{
 				// ListBox1のフォントカラーを変える
 				Form1.pcol1 = colorDialogPC.Color;
+				// パネルのカラーを更新
+				panel1.BackColor = Form1.pcol1;
+				Form1.Form1Instance.panelLabel1Col = Form1.pcol1;
+				Form1.Form1Instance.panelLabel3Col = Form1.pcol1;
 			}
 		}
 		// ボタン：アクセントカラー(メイン)の初期化
 		private void buttonResetPC1_Click(object sender, EventArgs e)
 		{
 			Form1.pcol1 = Color.FromArgb(140, 175, 50);
+			// パネルのカラーを更新
+			panel1.BackColor = Form1.pcol1;
+			Form1.Form1Instance.panelLabel1Col = Form1.pcol1;
+			Form1.Form1Instance.panelLabel3Col = Form1.pcol1;
 		}
 
 		// ボタン：アクセントカラー(サブ)を変更
@@ -122,14 +144,17 @@ namespace MyTool_ListFusen
 			{
 				// ListBox1のフォントカラーを変える
 				Form1.pcol2 = colorDialogPC.Color;
+				// パネルのカラーを更新
+				Form1.Form1Instance.panelLabel2Col = Form1.pcol2;
 			}
 		}
 		// ボタン：アクセントカラー(サブ)の初期化
 		private void buttonResetPC2_Click(object sender, EventArgs e)
 		{
+			// パネルのカラーを更新
 			Form1.pcol2 = Color.FromArgb(100, 128, 60);
+			Form1.Form1Instance.panelLabel2Col = Form1.pcol2;
 		}
-
 
 		// チェックボックス：右端で折り返す
 		private void checkBoxWordWrap_CheckedChanged(object sender, EventArgs e)
